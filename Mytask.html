@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .containera {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 25%;
+            text-align: center;
+        }
+    
+        .photo {
+            width: 45%;
+            height: 155px;
+            border-radius: 20%;
+            margin: 0 auto 15px;
+            border: 2px solid #4ca8af;
+        }
+        h1 {
+            font-size: 28px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        button {
+
+            color: #fff;
+            padding: 15px 25px;
+            background-color: #38D2D2;
+            background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: inset -3px -3px 9px ;
+            border-radius: 11px;
+            font-weight: bold;
+            font-size: 13px;
+            border: 0 rgb(77, 153, 216);
+            user-select: none;
+            touch-action: manipulation;
+
+  cursor: pointer;
+        }
+        button:hover {
+            background-color: hsl(147, 70%, 67%);
+        }
+    </style>
+</head>
+<body>
+    <div class="containera">
+        <img src="WhatsApp Image 2024-11-17 at 1.02.44 AM.jpeg" alt="Ajith's Photo" class="photo">
+        <h1 id="name">AjithKumar Sivanantham</h1>
+        <p id="Exp"></p>
+        <p id="Bio"> Computer Engineering Graduate | Front-end Designer & Developer | Enthusiast of Emerging Techs | Dedicated Volunteer | Passionate About Community Service & Social Impact. 📈 Dedicated to Continuous Learning✨</p>
+        <p id="em-det">DCKAP Palli, Chennai </p>
+        <button id="actionButton" onclick="updateDetails()">Update profile</button>
+        <button id="colorChanging">Background</button>
+    </div>
+    <script>
+        // Js DOM functionalities 
+        function updateDetails() {
+            const nameElement = document.getElementById('name');
+            const detailsElement = document.getElementById('Bio');
+            const actionButton = document.getElementById('actionButton');
+
+            // Update DOM elements
+            document.getElementById("Exp").innerHTML = "About Game development";
+
+            // Adding classnames by using DOM
+            document.getElementById("Exp").className = "Adding classnames";
+            document.getElementById("Bio").className = "Bio information";
+
+            // Dynamic Change of the content by DOM
+            nameElement.textContent = "AjithKumar's Journey";
+            detailsElement.textContent = "My journey in game development started with full-stack training, combining programming, design, and AI. I steadily developed skills in creating interactive and immersive game designing, balancing self-learning and structured training. With a strong foundation in computer engineering, I aims to get into development, blending my creativity with technical expertise for impactful creations.";
+            actionButton.textContent = "Go Back";
+
+            // Styling inside style by using DOM
+            nameElement.style.color = "#58b918";
+            detailsElement.style.color = "hsl(226, 52%, 52%)";
+            
+        }
+
+        // Color Changing functionality
+        // const colors = ["#FFAA33","#3375FF","#FF33A6","#33FFAA","#75FF33","#FF3357","#3375AA","#AA33FF","#FFC733","#33FF75"];
+        
+        //    document.getElementById('colorChanging').addEventListener('click', function() {
+        //    var selectedColora = "#FFAA33";
+        //    var selectedColorb = "#3375FF";
+        //    document.body.style.backgroundColor = selectedColora,selectedColorb;
+        //    console.log('Background color has been changed while clicking to: ' + selectedColor);
+
+        // });
+
+        const colorss = ["#FFAA33","#3375FF","#FF33A6","#33FFAA","#75FF33","#FF3357","#3375AA","#AA33FF","#FFC733","#33FF75"];
+ 
+         let index = 0;
+
+          // Color Changing functionality
+           document.getElementById('colorChanging').addEventListener('click', function() {
+           document.body.style.backgroundColor = colorss[index];
+           index = (index + 1) % colorss.length;
+           console.log('Background color changed to: ' + colorss[index] + ' when u clicked');
+           });
+
+    </script>
+</body>
+</html>
+
