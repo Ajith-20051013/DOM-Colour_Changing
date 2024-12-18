@@ -40,7 +40,6 @@
             color: #555;
         }
         button {
-
             color: #fff;
             padding: 15px 25px;
             background-color: #38D2D2;
@@ -52,11 +51,53 @@
             border: 0 rgb(77, 153, 216);
             user-select: none;
             touch-action: manipulation;
-
-  cursor: pointer;
+            cursor: pointer;
         }
         button:hover {
             background-color: hsl(147, 70%, 67%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .containera {
+                width: 50%;
+                padding: 15px;
+            }
+            .photo {
+                width: 60%;
+                height: auto;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .containera {
+                width: 90%;
+                padding: 10px;
+            }
+            .photo {
+                width: 70%;
+                height: auto;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 12px;
+            }
+            button {
+                padding: 8px 15px;
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -71,53 +112,33 @@
         <button id="colorChanging">Background</button>
     </div>
     <script>
-        // Js DOM functionalities 
         function updateDetails() {
             const nameElement = document.getElementById('name');
             const detailsElement = document.getElementById('Bio');
             const actionButton = document.getElementById('actionButton');
 
-            // Update DOM elements
             document.getElementById("Exp").innerHTML = "About Game development";
 
-            // Adding classnames by using DOM
             document.getElementById("Exp").className = "Adding classnames";
             document.getElementById("Bio").className = "Bio information";
 
-            // Dynamic Change of the content by DOM
             nameElement.textContent = "AjithKumar's Journey";
             detailsElement.textContent = "My journey in game development started with full-stack training, combining programming, design, and AI. I steadily developed skills in creating interactive and immersive game designing, balancing self-learning and structured training. With a strong foundation in computer engineering, I aims to get into development, blending my creativity with technical expertise for impactful creations.";
             actionButton.textContent = "Go Back";
 
-            // Styling inside style by using DOM
             nameElement.style.color = "#58b918";
             detailsElement.style.color = "hsl(226, 52%, 52%)";
-            
         }
-
-        // Color Changing functionality
-        // const colors = ["#FFAA33","#3375FF","#FF33A6","#33FFAA","#75FF33","#FF3357","#3375AA","#AA33FF","#FFC733","#33FF75"];
-        
-        //    document.getElementById('colorChanging').addEventListener('click', function() {
-        //    var selectedColora = "#FFAA33";
-        //    var selectedColorb = "#3375FF";
-        //    document.body.style.backgroundColor = selectedColora,selectedColorb;
-        //    console.log('Background color has been changed while clicking to: ' + selectedColor);
-
-        // });
 
         const colorss = ["#FFAA33","#3375FF","#FF33A6","#33FFAA","#75FF33","#FF3357","#3375AA","#AA33FF","#FFC733","#33FF75"];
  
-         let index = 0;
+        let index = 0;
 
-          // Color Changing functionality
-           document.getElementById('colorChanging').addEventListener('click', function() {
-           document.body.style.backgroundColor = colorss[index];
-           index = (index + 1) % colorss.length;
-           console.log('Background color changed to: ' + colorss[index] + ' when u clicked');
-           });
-
+        document.getElementById('colorChanging').addEventListener('click', function() {
+            document.body.style.backgroundColor = colorss[index];
+            index = (index + 1) % colorss.length;
+            console.log('Background color changed to: ' + colorss[index] + ' when u clicked');
+        });
     </script>
 </body>
 </html>
-
